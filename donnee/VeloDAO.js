@@ -19,6 +19,16 @@ class VeloDAO{
 
         return this.listeVelo;
     }
+    ajouter(velo){
+
+        if(this.listeVelo.length > 0)
+            velo.id = this.listeVelo[this.listeVelo.length-1].id + 1;
+        else
+            velo.id = 0;
+
+        this.listeVelo[velo.id] = velo;
+
+    }
 
 
 
