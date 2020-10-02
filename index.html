@@ -5,21 +5,49 @@
     <title>Liste des cadeaux de Noël</title>
     <link rel="stylesheet" href="decoration/application.css">
     <style></style>
+    <script src="modele/Velo.js"></script>
+    <script src="donnee/VeloDAO.js"></script>
     <script src="vue/VueListeVelo.js"></script>
     <script defer src="Application.js"></script>
 
 </head>
 <body>
-  <div id="page-chargement-application">Chargement de l'application Magasin Le monde du Vélo</div>
+    <div id="page-chargement-application">Chargement de l'application Magasin Le monde du Vélo</div>
+
 
     <script type="plain/text" id="html-vue-liste-velo">
     <div class="page">
-    <h1>Liste des cadeaux de Noël</h1>
-    <a class="action" href="#ajouter-velo">Ajouter un cadeau</a>
+    <h1>Liste des vélos dans le magasin</h1>
+    <a class="action" href="#ajouter-velo">Ajouter un vélo</a>
     <ul id="liste-velo">
-      <li><a href="#velo/{Velo.id}" class="liste-cadeau-item">{Velo.modele}</a></li>
+      <li><a href="#velo/{Velo.id}" class="liste-velo-item">{Velo.modele}</a></li>
     </ul>
-  </div>
-  </script>
+    </div>
+    </script>
+
+    <script type="plain/text" id="html-vue-ajouter-velo">
+    <div class="page">
+    <h1>Ajouter un Vélo dans l'inventaire</h1>
+    <form id="formulaire-ajouter">
+      <fieldset>
+        <legend>Identification du vélo</legend>
+        <div>
+          <label for="velo-modele">Modèle</label>
+          <input type="text" id="velo-modele"/>
+        </div>
+        <div>
+          <label for="velo-marque">Marque</label>
+          <input type="text" id="velo-marque"/>
+        </div>
+        <div>
+          <label for="velo-prix">Prix</label>
+          <input type="text" id="velo-prix"/>
+        </div>
+      </fieldset>
+      <input class="action" type="submit" id="enregistrer" value="Enregistrer"/>
+    </form>
+    <a href="#" class="action">Annuler et revenir &agrave; la liste</a>
+    </div>
+    </script>
 </body>
 </html>

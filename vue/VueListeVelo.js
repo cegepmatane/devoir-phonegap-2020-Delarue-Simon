@@ -6,6 +6,11 @@ class VueListeVelo{
 
 
     }
+
+    initialiserListeVelo(listeVeloDonnee){
+        this.listeVeloDonnee = listeVeloDonnee;
+
+    }
     afficher(){
         document.getElementsByTagName("body")[0].innerHTML = this.html;
 
@@ -15,9 +20,13 @@ class VueListeVelo{
 
         for(var numeroVelo in this.listeVeloDonnee){
             let listeVeloInnerHTMLRemplacement = listeVeloInnerHTML;
+
             listeVeloInnerHTMLRemplacement = listeVeloInnerHTMLRemplacement.replace("{Velo.id}", this.listeVeloDonnee[numeroVelo].id);
+
             listeVeloInnerHTMLRemplacement = listeVeloInnerHTMLRemplacement.replace("{Velo.modele}", this.listeVeloDonnee[numeroVelo].modele);
-            listeVeloInnerHTMLRemplacement += listeVeloInnerHTMLRemplacement;
+
+            listeVeloHTMLRemplacement += listeVeloInnerHTMLRemplacement;
+
 
             }
 

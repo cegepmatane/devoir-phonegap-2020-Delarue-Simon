@@ -37,17 +37,17 @@ html {
   font-size:48px;
 }
 
-#liste-cadeau {
+#liste-velo {
   list-style-type:none;
 }
 
-.liste-cadeau-item {
+.liste-velo-item {
   color:var(--theme-rouge);
   text-transform : capitalize;
   text-decoration:none;
 }
 
-#liste-cadeau li {
+#liste-velo li {
   position:relative;
   display:block;
   margin-bottom:0.25rem;
@@ -58,7 +58,7 @@ html {
   box-shadow: 2px 2px var(--theme-blanc);
 }
 
-#liste-cadeau li::before {
+#liste-velo li::before {
    content:"X";
    text-align:center;
    color:var(--theme-rouge);
