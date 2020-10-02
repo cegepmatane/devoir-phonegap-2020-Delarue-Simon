@@ -1,5 +1,9 @@
 class Application{
-    constructor(window, veloDAO, vueListeVelo, vueAjouterVelo){
+    constructor(window, vueListeVelo){
+        this.window = window;
+        this.vueListeVelo = vueListeVelo;
+        this.vueListeVelo.afficher();
+
 
 
     }
@@ -10,7 +14,7 @@ class Application{
 
 
 
-new Application(window, new VeloDAO(), new VueListeVelo(), new VueAjouterVelo())
+new Application(window, new VueListeVelo())
 {
 
 
