@@ -1,5 +1,5 @@
 class Application{
-    constructor(window, veloDAO, vueListeVelo, vueAjouterVelo){
+    constructor(window, veloDAO, vueListeVelo, vueAjouterVelo, vueVelo){
         this.window = window;
         this.veloDAO = veloDAO;
 
@@ -7,6 +7,8 @@ class Application{
 
         this.vueAjouterVelo = vueAjouterVelo;
         this.vueAjouterVelo.initialiserActionAjouterVelo(velo =>this.actionAjouterVelo(velo));
+
+        this.vueVelo = vueVelo;
 
         this.window.addEventListener("hashchange", () =>this.naviguer());
 
@@ -25,8 +27,18 @@ class Application{
         }else if(hash.match(/^#ajouter-velo/)){
 
             this.vueAjouterVelo.afficher();
+        }else{
+
+            let navigation = hash.match(/^#velo\/([0-9]+)/);
+            let idVelo = navigation[1];
+
+            this.vueVelo.initialiserVelo(this.veloDAO.lister()[idVelo]);
+            this.vueVelo.afficher();
+
         }
     }
+
+
     actionAjouterVelo(velo){
         this.veloDAO.ajouter(velo);
         this.window.location.hash = "#";
@@ -37,4 +49,4 @@ class Application{
 
 
 
-new Application(window,new VeloDAO(), new VueListeVelo(), new VueAjouterVelo());
+new Application(window,new VeloDAO(), new VueListeVelo(), new VueAjouterVelo(), new VueVelo());
